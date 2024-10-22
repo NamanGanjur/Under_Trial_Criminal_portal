@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Criminal Dashboard</h2>
+        <p><strong>Name:</strong> {{ details.name }}</p>
+        <p><strong>Crime:</strong> {{ details.crime }}</p>
+        <p><strong>Trial Duration:</strong> {{ details.trial_duration }}</p>
+        
+        {% if message %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <h4>Request a Lawyer</h4>
+        <form action="/request_lawyer" method="post">
+            <input type="hidden" name="criminal_name" value="{{ details.name }}">
+            <input type="hidden" name="crime_type" value="{{ details.crime }}">
+            <button type="submit" class="btn btn-primary">Request a Lawyer</button>
+        </form>
+    </div>
+</body>
+</html>

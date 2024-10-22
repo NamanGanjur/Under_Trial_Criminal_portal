@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Guardian Dashboard</h2>
+        <p><strong>Name:</strong> {{ details.name }}</p>
+        <p><strong>Relation:</strong> {{ details.relation }}</p>
+        <p><strong>Contact:</strong> {{ details.contact }}</p>
+        <p><strong>Criminal Name:</strong> {{ details.criminal_name }}</p>
+        
+        <!-- Form to request a lawyer -->
+        <form action="/request_lawyer" method="post">
+            <input type="hidden" name="criminal_name" value="{{ details.criminal_name }}">
+            <input type="hidden" name="crime_type" value="{{ details.crime }}"> <!-- Ensure this field is available in details -->
+            <button type="submit" class="btn btn-primary">Request Lawyer</button>
+        </form>
+    </div>
+</body>
+</html>

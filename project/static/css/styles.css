@@ -1,0 +1,114 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Center the container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the headers */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="password"],
+select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Button styles */
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Dashboard specific styles */
+.dashboard-container {
+    margin-top: 50px;
+}
+
+.dashboard-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #ecf0f1;
+    border-left: 5px solid #3498db;
+}
+
+.dashboard-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-container li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: box-shadow 0.3s;
+}
+
+.dashboard-container li:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the available lawyers page */
+.lawyer-list h2 {
+    color: #e74c3c;
+}
+
+.lawyer-list ul {
+    padding: 0;
+}
+
+.lawyer-list li {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.lawyer-list li:hover {
+    background: #f1c40f;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Lawyer Dashboard</h2>
+        {% if requests %}
+            <ul>
+                {% for request in requests %}
+                    <li>
+                        <p><strong>Criminal Name:</strong> {{ request.criminal_name }}</p>
+                        <p><strong>Crime:</strong> {{ request.crime }}</p>
+                        <p><strong>Trial Duration:</strong> {{ request.trial_duration }}</p>
+                        {% if request.status == 'accepted' %}
+                            <p class="text-success">Request Accepted</p>
+                        {% elif request.status == 'rejected' %}
+                            <p class="text-danger">Request Rejected</p>
+                        {% else %}
+                            <form action="/respond_request" method="post">
+                                <input type="hidden" name="criminal_name" value="{{ request.criminal_name }}">
+                                <button type="submit" name="action" value="accept" class="btn btn-success">Accept</button>
+                                <button type="submit" name="action" value="reject" class="btn btn-danger">Reject</button>
+                            </form>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No requests available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
